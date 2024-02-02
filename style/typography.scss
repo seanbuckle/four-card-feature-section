@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url(./font/poppins-extralight.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./font/poppins-regular.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(./font/poppins-semibold.woff2) format('woff2');
+}
+
+:root{
+    --ff: 'Poppins', sans-serif;
+    --fw-600: 600;
+    --fs-head-l: clamp(1.5rem,5vw,2.25rem)/normal;
+    --f-head-l: 200 var(--fs-head-l) var(--ff);
+    --f-head-bold: var(--fw-600) var(--fs-head-l) var(--ff);
+    --f-head-ltr-spc: 0.01563rem;
+    --f-heading-s: var(--fw-600) 1.25rem/normal var(--ff);
+    --f-body: 400 0.8125rem/1.4375rem var(--ff);
+}
