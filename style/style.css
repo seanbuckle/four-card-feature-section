@@ -1,0 +1,202 @@
+:root {
+  --clr-body: oklch(98.51% 0 0);
+  --clr-surface: oklch(100% 0 0);
+  --clr-bdr-red: oklch(64.54% 0.2942 23.99);
+  --clr-bdr-cyan: oklch(79.43% 0.1821 195.03);
+  --clr-bdr-orange: oklch(81.09% 0.1913 70.11);
+  --clr-bdr-blue: oklch(68.94% 0.1807 253.31);
+  --clr-txt-primary: color-mix(in oklch, oklch(43.07% 0.031 280.03), oklch(100% 0 0) 22%);
+  --clr-txt-secondary: oklch(43.07% 0.031 280.03);
+  --clr-shadow: oklch(71.56% 0.075 254.43/0.5);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(./font/poppins-extralight.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./font/poppins-regular.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(./font/poppins-semibold.woff2) format("woff2");
+}
+:root {
+  --ff: "Poppins", sans-serif;
+  --fw-600: 600;
+  --fs-head-l: clamp(1.5rem,5vw,2.25rem)/normal;
+  --f-head-l: 200 var(--fs-head-l) var(--ff);
+  --f-head-bold: var(--fw-600) var(--fs-head-l) var(--ff);
+  --f-head-ltr-spc: 0.01563rem;
+  --f-heading-s: var(--fw-600) 1.25rem/normal var(--ff);
+  --f-body: 400 0.8125rem/1.4375rem var(--ff);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  font: var(--f-body);
+  background: var(--clr-body);
+  color: var(--clr-txt-primary);
+}
+
+main {
+  padding-block: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-header {
+  max-width: 33.75rem;
+  padding-block-end: 4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.81rem;
+}
+.site-header__title {
+  max-width: 23ch;
+  font: var(--f-head-l);
+  letter-spacing: var(--f-head-ltr-spc);
+  color: var(--clr-txt-secondary);
+}
+@supports (text-wrap: balance) {
+  .site-header__title {
+    text-wrap: balance;
+  }
+}
+.site-header__title span {
+  font: var(--f-head-bold);
+}
+
+.grid {
+  width: min(100%, 73.375rem);
+  padding-inline: 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-auto-columns: 1fr;
+}
+
+.card {
+  padding: 2rem;
+  border-top: 0.25rem solid;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--clr-surface);
+  box-shadow: 0px 15px 30px -11px var(--clr-shadow);
+}
+.card--red {
+  border-color: var(--clr-bdr-red);
+}
+.card--red *::selection {
+  background: var(--clr-bdr-red);
+  color: var(--clr-surface);
+}
+.card--red *::-moz-selection {
+  background: var(--clr-bdr-red);
+  color: var(--clr-surface);
+}
+.card--cyan {
+  border-color: var(--clr-bdr-cyan);
+}
+.card--cyan *::selection {
+  background: var(--clr-bdr-cyan);
+  color: var(--clr-surface);
+}
+.card--cyan *::-moz-selection {
+  background: var(--clr-bdr-cyan);
+  color: var(--clr-surface);
+}
+.card--orange {
+  border-color: var(--clr-bdr-orange);
+}
+.card--orange *::selection {
+  background: var(--clr-bdr-orange);
+  color: var(--clr-surface);
+}
+.card--orange *::-moz-selection {
+  background: var(--clr-bdr-orange);
+  color: var(--clr-surface);
+}
+.card--blue {
+  border-color: var(--clr-bdr-blue);
+}
+.card--blue *::selection {
+  background: var(--clr-bdr-blue);
+  color: var(--clr-surface);
+}
+.card--blue *::-moz-selection {
+  background: var(--clr-bdr-blue);
+  color: var(--clr-surface);
+}
+.card__title {
+  font: var(--f-heading-s);
+  color: var(--clr-txt-secondary);
+}
+.card__text {
+  padding-block-end: 2.5rem;
+}
+@supports (text-wrap: pretty) {
+  .card__text {
+    text-wrap: pretty;
+  }
+}
+.card__img {
+  width: 4rem;
+  height: 4rem;
+  align-self: flex-end;
+}
+
+@media screen and (width > 48rem) {
+  .grid {
+    grid-template-areas: ". two ." "one two four" "one three four" ". three .";
+  }
+  .grid > :nth-child(1) {
+    grid-area: one;
+  }
+  .grid > :nth-child(2) {
+    grid-area: two;
+  }
+  .grid > :nth-child(3) {
+    grid-area: three;
+  }
+  .grid > :nth-child(4) {
+    grid-area: four;
+  }
+}
+.attribution {
+  padding-block: 1rem;
+  padding-inline: 1rem;
+  display: grid;
+  place-items: center;
+}
+.attribution a {
+  color: var(--clr-txt-secondary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=style.css.map */
