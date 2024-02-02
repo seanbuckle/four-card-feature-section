@@ -1,0 +1,11 @@
+:root{
+    --clr-body: oklch(98.51% 0 0);
+    --clr-surface: oklch(100% 0 0);
+    --clr-bdr-red: oklch(64.54% 0.2942 23.99);
+    --clr-bdr-cyan: oklch(79.43% 0.1821 195.03);
+    --clr-bdr-orange: oklch(81.09% 0.1913 70.11);
+    --clr-bdr-blue: oklch(68.94% 0.1807 253.31);
+    --clr-txt-primary: color-mix(in oklch, oklch(43.07% 0.031 280.03), oklch(100% 0 0) 22%);
+    --clr-txt-secondary: oklch(43.07% 0.031 280.03);
+    --clr-shadow: oklch(71.56% 0.075 254.43/0.5);
+}
